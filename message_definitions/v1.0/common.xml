@@ -4447,6 +4447,15 @@
       <field type="float[3]" name="position_cov">eph epv</field>
       <field type="uint64_t" name="custom_state">button states or switches of a tracker device</field>
     </message>
+	<message id="145" name="CV_DATA">
+      <description>companion data input</description>
+	  <field type="uint64_t" name="time_usec" units="us">Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.</field>
+      <field type="uint8_t" name="data_flag"></field>
+      <field type="float" name="data_x"></field>
+	  <field type="float" name="data_y"></field>
+	  <field type="float" name="rsul_x"></field>
+	  <field type="float" name="rsul_y"></field>
+    </message>
     <message id="146" name="CONTROL_SYSTEM_STATE">
       <description>The smoothed, monotonic system state used to feed the control loops of the system.</description>
       <field type="uint64_t" name="time_usec" units="us">Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.</field>
