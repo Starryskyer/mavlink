@@ -4526,6 +4526,7 @@
       <field type="uint8_t" name="type" enum="LANDING_TARGET_TYPE">Type of landing target</field>
       <field type="uint8_t" name="position_valid">Boolean indicating whether the position fields (x, y, z, q, type) contain valid target position information (valid: 1, invalid: 0). Default is 0 (invalid).</field>
     </message>
+
     <!-- imported from ardupilotmega.xml (2019) -->
     <message id="162" name="FENCE_STATUS">
       <description>Status of geo-fencing. Sent in extended status stream when fencing enabled.</description>
@@ -4536,6 +4537,16 @@
       <extensions/>
       <field type="uint8_t" name="breach_mitigation" enum="FENCE_MITIGATE">Active action to prevent fence breach</field>
     </message>
+
+    <message id="199" name="DISTANCE_SENSOR_RASP_LD06">
+      <description>Request for raspi run LD06</description>
+      <field type="float" name="angle" units="deg">current deg 0--360</field>
+      <field type="float" name="distance" units="m">current distance</field>
+      <field type="uint8_t" name="orientation">current distance</field>
+      <field type="uint8_t" name="min_distance" units="cm">current distance</field>
+      <field type="uint16_t" name="max_distance" units="cm">current distance</field>
+    </message>
+
     <!-- MESSAGE IDs 180 - 229: Space for custom messages in individual projectname_messages.xml files -->
     <!-- 192 MAG_CAL_REPORT imported from ardupilotmega.xml -->
     <message id="192" name="MAG_CAL_REPORT">
@@ -4694,7 +4705,7 @@
       <field type="int8_t" name="custom1">Field for custom payload.</field>
       <field type="int8_t" name="custom2">Field for custom payload.</field>
     </message>
-     <message id="236" name="RASP_FLAG">
+    <message id="236" name="RASP_FLAG">
       <description>RTCM message for injecting into the onboard from Raspberry</description>
       <field type="uint8_t" name="flags"></field>
       <field type="uint8_t" name="len" units="bytes">data length</field>
